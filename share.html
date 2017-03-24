@@ -59,7 +59,7 @@
                     intWidth = intWidth || '500';
                     intHeight = intHeight || '400';
                     strResize = (blnResize ? 'yes' : 'no');
-                    strLink = this.attr('href');
+                    strLink = this.attr('href') + window.location.href;
 
                     // Set title and open popup with focus on it
                     var strTitle = ((typeof this.attr('title') !== 'undefined') ? this.attr('title') : 'Social Share'),

@@ -38,21 +38,58 @@
         </style>
     </head>
     <body>
+        <script type="text/javascript">
+            ;(function($){
+
+                /**
+   * jQuery function to prevent default anchor event and take the href * and the title to make a share popup
+   *
+   * @param  {[object]} e           [Mouse event]
+   * @param  {[integer]} intWidth   [Popup width defalut 500]
+   * @param  {[integer]} intHeight  [Popup height defalut 400]
+   * @param  {[boolean]} blnResize  [Is popup resizeabel default true]
+   */
+                $.fn.customerPopup = function (e, intWidth, intHeight, blnResize) {
+
+                    // Prevent default anchor event
+                    e.preventDefault();
+
+                    // Set values for window
+                    intWidth = intWidth || '500';
+                    intHeight = intHeight || '400';
+                    strResize = (blnResize ? 'yes' : 'no');
+
+                    // Set title and open popup with focus on it
+                    var strTitle = ((typeof this.attr('title') !== 'undefined') ? this.attr('title') : 'Social Share'),
+                        strParam = 'width=' + intWidth + ',height=' + intHeight + ',resizable=' + strResize,            
+                        objWindow = window.open(this.attr('href'), strTitle, strParam).focus();
+                }
+
+                /* ================================================== */
+
+                $(document).ready(function ($) {
+                    $('.sharema').on("click", function(e) {
+                        $(this).customerPopup(e);
+                    });
+                });
+
+            }(jQuery));
+        </script>
         <div id="share-buttons">
 
-            <a href="http://www.facebook.com/sharer.php?u=http://revista.mujeractual.cl" target="_blank">
+            <a class="sharema" href="http://www.facebook.com/sharer.php?u=http://revista.mujeractual.cl" target="_blank">
                 <img src="https://cdn4.iconfinder.com/data/icons/miu-black-social-2/60/facebook-64.png" alt="Facebook" />
             </a>
 
-            <a href="https://twitter.com/share?url=http://revista.mujeractual.cl&amp;text=Mira%20nuestra%20revista%20en&amp;hashtags=mujeractual" target="_blank">
+            <a class="sharema" href="https://twitter.com/share?url=http://revista.mujeractual.cl&amp;text=Mira%20nuestra%20revista%20en&amp;hashtags=mujeractual" target="_blank">
                 <img src="https://cdn4.iconfinder.com/data/icons/miu-black-social-2/60/twitter-64.png" alt="Twitter" />
             </a>
 
-            <a href="https://plus.google.com/share?url=http://revista.mujeractual.cl" target="_blank">
+            <a class="sharema" href="https://plus.google.com/share?url=http://revista.mujeractual.cl" target="_blank">
                 <img src="https://cdn4.iconfinder.com/data/icons/miu-black-social-2/60/google-64.png" alt="Google" />
             </a>
 
-            <a href="whatsapp://send?text=Mira%20la%20nueva%20revista%20Mujer%20Actual:%20http://revista.mujeractual.cl" data-action="share/whatsapp/share">
+            <a class="sharema" href="whatsapp://send?text=Mira%20la%20nueva%20revista%20Mujer%20Actual:%20http://revista.mujeractual.cl" data-action="share/whatsapp/share">
                 <img src="https://cdn4.iconfinder.com/data/icons/miu-black-social-2/60/whatsapp-64.png" alt="WhatsApp" />
             </a>
 

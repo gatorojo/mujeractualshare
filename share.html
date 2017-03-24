@@ -59,13 +59,12 @@
                     intWidth = intWidth || '500';
                     intHeight = intHeight || '400';
                     strResize = (blnResize ? 'yes' : 'no');
-                    
-                    var href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL);
+                    strLink = this.attr('href');
 
                     // Set title and open popup with focus on it
                     var strTitle = ((typeof this.attr('title') !== 'undefined') ? this.attr('title') : 'Social Share'),
                         strParam = 'width=' + intWidth + ',height=' + intHeight + ',resizable=' + strResize,            
-                        objWindow = window.open(this.attr('href'), strTitle, strParam).focus();
+                        objWindow = window.open(strLink, strTitle, strParam).focus();
                 }
 
                 /* ================================================== */
@@ -80,7 +79,7 @@
         </script>
         <div id="share-buttons">
 
-            <a class="sharema" href="" target="_blank">
+            <a class="sharema" href="http://www.facebook.com/sharer.php?u=" target="_blank">
                 <img src="https://cdn4.iconfinder.com/data/icons/miu-black-social-2/60/facebook-64.png" alt="Facebook" />
             </a>
 

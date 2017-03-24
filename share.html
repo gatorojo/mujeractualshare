@@ -63,7 +63,7 @@
                     // Set title and open popup with focus on it
                     var strTitle = ((typeof this.attr('title') !== 'undefined') ? this.attr('title') : 'Social Share'),
                         strParam = 'width=' + intWidth + ',height=' + intHeight + ',resizable=' + strResize,            
-                        objWindow = window.open(this.attr('href'), strTitle, strParam).focus();
+                        objWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)); return false;
                 }
 
                 /* ================================================== */
@@ -94,7 +94,7 @@
                 <img src="https://cdn4.iconfinder.com/data/icons/miu-black-social-2/60/whatsapp-64.png" alt="WhatsApp" />
             </a>
 
-            <a class="sharema" href="https://www.facebook.com/sharer/sharer.php?u=&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)); return false;">
+            <a class="sharema" href="https://www.facebook.com/sharer/sharer.php?u=&t=" title="Share on Facebook" target="_blank">
                 <img src="https://cdn4.iconfinder.com/data/icons/miu-black-social-2/60/facebook-64.png" alt="Facebook" />
             </a>
 

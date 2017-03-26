@@ -12,15 +12,12 @@
                 z-index: 100000;
             }
 
-            #share-buttons img {
-                width: 32px;
-                padding: 1px;
-                border: 0;
-                box-shadow: 0;
-                display: inline;
-            }
-
             #share-buttons a {
+                height: 36px;
+                width: 36px;
+                margin: 1px;
+                display: inline;
+                float: left;
                 text-decoration: none;
                 opacity: .6;
                 -webkit-transition: opacity .2s ease-in-out;
@@ -33,6 +30,64 @@
             #share-buttons a:hover {
                 text-decoration: none;
                 opacity: .9;
+            }
+
+            #share-buttons a.fb {
+                background-image: url(iconos.png);
+                background-size: 288px;
+                background-position: 0px 0px;
+            }
+
+            #share-buttons a.ttr {
+                background-image: url(iconos.png);
+                background-size: 288px;
+                background-position: 252px 0px;
+            }
+
+            #share-buttons a.gp {
+                background-image: url(iconos.png);
+                background-size: 288px;
+                background-position: 216px 0px;
+            }
+
+            #share-buttons a.wa {
+                background-image: url(iconos.png);
+                background-size: 288px;
+                background-position: 180px 0px;
+            }
+
+            @media (max-width: 768px) {
+
+                #share-buttons a {
+                    height: 28px;
+                    width: 28px;
+                    opacity: 1;
+                }
+
+                #share-buttons a.fb {
+                    background-image: url(iconos.png);
+                    background-size: 224px;
+                    background-position: 112px 0px;
+                }
+
+                #share-buttons a.ttr {
+                    background-image: url(iconos.png);
+                    background-size: 224px;
+                    background-position: 84px 0px;
+                }
+
+                #share-buttons a.gp {
+                    background-image: url(iconos.png);
+                    background-size: 224px;
+                    background-position: 56px 0px;
+                }
+
+                #share-buttons a.wa {
+                    background-image: url(iconos.png);
+                    background-size: 224px;
+                    background-position: 28px 0px;
+                }
+
             }
 
         </style>
@@ -79,20 +134,16 @@
         </script>
         <div id="share-buttons">
 
-            <a class="sharema" href="http://www.facebook.com/sharer.php?u=" target="_blank">
-                <img src="https://cdn1.iconfinder.com/data/icons/social-black-buttons/512/facebook-64.png" alt="Facebook" />
+            <a class="sharema fb" href="http://www.facebook.com/sharer.php?u=" target="_blank">
             </a>
 
-            <a class="sharema" href="https://twitter.com/share?url=" target="_blank">
-                <img src="https://cdn1.iconfinder.com/data/icons/social-black-buttons/512/twitter-64.png" alt="Twitter" />
+            <a class="sharema ttr" href="https://twitter.com/share?url=" target="_blank">
             </a>
 
-            <a class="sharema" href="https://plus.google.com/share?url=" target="_blank">
-                <img src="https://cdn1.iconfinder.com/data/icons/social-black-buttons/512/google_plus-64.png" alt="Google" />
+            <a class="sharema gp" href="https://plus.google.com/share?url=" target="_blank">
             </a>
 
-            <a class="sharema" href="whatsapp://send?text=Mira%20la%20nueva%20revista%20Mujer%20Actual:%20" data-action="share/whatsapp/share">
-                <img src="https://cdn1.iconfinder.com/data/icons/social-black-buttons/512/whatsapp-64.png" alt="WhatsApp" />
+            <a class="sharema wa" href="whatsapp://send?text=Mira%20la%20nueva%20revista%20Mujer%20Actual:%20" data-action="share/whatsapp/share">
             </a>
 
         </div>
